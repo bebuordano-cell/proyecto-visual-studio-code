@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/Styles.css">
+</head>
+<body>
+
+    <!-- ======================================================
+         HEADER Y NAVBAR - copia esta estructura de index.html
+         ======================================================-->
+
+         <!-- SECCION PRINCIPAL DE CONTACTO-->
+          <main class="seccion contenedor">
+            <h1 class="titulo-seccion"> ponte en contacto</h1>
+            <p class="subtitulo-seccion">¿tienes dudas o quieres consultar disponibilidad para tu evento? escribibenos.</p>
+
+            <div class="contacto grid">
+
+                <!-- BLOQUE 1: INFORMACION, ENLACES DIRECTOS Y MAPA-->
+                 <aside class="contacto-info">
+                    <h2>meditos de contacto</h2>
+                    
+                    <div class="item-contacto">
+                        <span> whatsApp directo:</span>
+                        <a href="https://wa.me/543704000000?text=hola,%20quesieraconsultar%20por%%20evento" target="_blamk" class="btn-wa">
+                            enviar mensaje por whatsApp
+                        </a>
+                    </div>
+
+                    <div class="item-contacto">
+                        <span>  telefono:</span>
+                        <a href="tel:+5437040000000">+54 370 400-0000</a>
+                    </div>
+
+                    <div class="item-contacto">
+                        <span> correo electronico:</span>
+                        <a href="mailto:contacto@salonnaranja.com">contacto@salonnaranja.com</a>
+                    </div>
+
+                    <div class="item-contacto">
+                        <span> direccion:</span>
+                        <p>av. principal #1234, formosa, argentina</p>
+                    </div>
+
+                    <div class="item-contacto">
+                         <span> horario de atencion</span>
+                         <p>lunes a viernes: 16:00 hs - 20:00 hs</p>
+                    </div>
+
+                    <!-- MAPA DE GOOGLE MAPS INSCRUSTADO (UBICACION) -->
+                     <div class="item-contacto mapa-contenedor"></div>
+                     <span> nuestra ubicacion:</span>
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.5774375662345!2d-58.2075485256678!3d-26.177887962900794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945caf420cd63a0d%3A0x13be3f70d33a752f!2sSal%C3%B3n%20Naranja!5e0!3m2!1ses-419!2sar!4v1789584393052!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                 </aside>
+            </div>
+
+            <!-- BLOQUE 2: FORMULARIO DE CONSULTA ESTATICO -->
+             <section class="contacto-formulario">
+                <h2>enviamos un mensaje</h2>
+
+                <form action="#" method="POST" class="formulario">
+
+                    <div class="campo">
+                        <label for="nombre">nombre y apellido:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="ej: sofia jazmin" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">correo electronico:</label>
+                        <input type="tel" id="telefonp" name="telefono" placeholder="3704XXXXXX">
+                    </div>
+
+                  <div class="campo">
+                    <label for="evento">tipo de evento:</label>
+                    <select name="evento" id="evento">
+                        <option value="cumpleamños"> cumpleaños infantil</option>
+                        <option value="15años">fiesta de 15</option>
+                        <option value="casamiento">casamiento</option>
+                        <option value="otro">otro tipo de evento</option>
+                    </select>
+                  </div>
+                  
+                  <div class="campo">
+                    <label for="mensaje">tu mensaje</label>
+                    <textarea name="mensaje" id=""mensaje rows="4" placeholder="cuentanos la fecha estimada y catidad de invitados..." required></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-enviar">enviar consulta</button>
+
+                </form>
+             </section>
+         </div>
+     </main>
+
+     <!-- FOOTER -->
+      <footer class="footer">
+        <div class="contenedor footer-contenido">
+            <div class="footer-info">
+                <h3>salon naranja</h3>
+                <p>creando recuerdos desde 2015.</p>
+            </div>
+        </div>
+        <div class="footer-contacto">
+            <p> av. principal #1234</p>
+            <p> +54 370 400-00000</p>
+        </div>
+    </div>
+    <div class="footer-copy">
+        <p>&copy; 2026 salon naranja. todos los derechos reservados.</p>
+    </div>
+      </footer>
+    
+</body>
+</html>
