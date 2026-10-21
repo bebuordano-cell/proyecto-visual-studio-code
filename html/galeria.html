@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="../css/Styles.css">
+
+</head>
+ <body>
+<!--======================================================
+1. HEADER Y NAVBAR
+==========================================================-------->
+<header class= "header">
+    <div class="contenedor header-contenido">
+        <!-- logo del proyecto -->
+        <div class="logo">
+            <img src="" alt="">
+            <a href="../index.html">salon <span>naranja</span></a>
+        <div>
+
+
+        <!-- menu de navegacion principal -->
+        <nav class="navbar">
+          <ul>
+              <li><a href="index.html"class="activo"></a>inicio</li>
+              <li><a href="/html/servicio.html">servicios</a></li> 
+              <li><a href="/html/galeria.html html">galeria</a></li>
+              <li><a href="/html/contactos.html">contactos</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- =================================================
+2. HERO (seccion de bien venida)
+impacto visual inicial con llamada a la accion (CTA).
+ =====================================================-->
+<section class="hero">
+    <div class="hero-contenido">
+        <h1>el lugar perfecto para tu evento inolvidable</h1>
+        <p>cumpleañps, bodas, eventos corporativos y mas en un ambiente unico</p>
+        <a href="contacto.html"class="btn">reservar fecha</a>
+    </div>
+</section>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- encabezado de la pagina -->
+ <section class="banner-pagina">
+    <div class="contenedor">
+        <h1>galeria de fotos</h1>
+        <p>conoce nuestras instalaciones y los momentos especiales celebrados en salon naranja</p>
+    </div>
+ </section>
+
+ <!-- =================================================
+     SECCION PRINCIPAL: GALERIA CON IMAGENES LOCALES
+    ===================================================-->
+    <main class="seccion contenedor">
+
+        <div class="galeria-grid">
+
+            <!--
+             RUTAS RELATIVAS:
+             el atributo src="img/nombre-archivo.jpg" le indica al navegador
+             que busque dentro de la carpeta "img" situada al mismo nivel que este HTML.
+             -->
+
+             <!-- foto 1: destacada (salon principal) -->
+              <article class="galeria-item ">
+                <img src="../img/salon principal.jpg" alt="salon principal decorado">
+                <div class="galeria-capa">
+                    <h3>salon principal</h3>
+                </div>
+              </article>
+
+              <!--foto 2: mesa de dulces -->
+              <article class="galeria-item">
+                <img src="../img/mesa de dulces.jpg" alt="mesa de dulces y torta">
+                <div class="galeria-capa">
+                    <h3>mesa de dulces</h3>
+                    <p>ambientacion tematica para cumpleaños</p>
+                </div>
+            </article>
+
+
+        <!-- foto 3: araea infantil -->
+        <article class="galeria-item">
+            <img src="../img/patio de juegos.jpg" alt="zona de juegos infantiles">
+            <div class="galeria-capa">
+                <h3>area infantil</h3>
+                <p>juegos supervisados y seguros</p>
+            </div>
+        </article>
+
+                    <!--foto 4: jardin exterior -->
+                    <article class="galeria-item">
+                        <img src="../img/jardin exterior.jpg" alt="jardin y dulces">
+                        <div class="galeria-capa">
+                            <h3>pista y DJ</h3>
+                            <p>sonido envolvente e iluminacion robotizada</p>
+                        </div>
+                    </article>
+        </div>
+    
+    <!-- foto 5: catering -->
+     <article class="galeria-item">
+        <img src="../img/catering.jpg" alt="platos de catering">
+        <div class="galeria-capa">
+            <h3>servicio de catering</h3>
+            <p>presentacion impecable en cada plato</p>
+        </div>
+     </article>
+
+     <!-- foto 6: pista y DJ -->
+      <article class="galeria-item">
+        <img src="../img/pista y DJ.jpg" alt="cabina de DJ e iluminacion">      
+        <div class="galeria-capa">
+            <h3>pista y DJ</h3>
+            <p>sonido envolvente e iluminacion robotizada</p>
+    </div>
+ </article>
+</main>
+    <!-- =============================================
+         FOOTER -  copia esta estructura de index.html
+         =============================================-->
+    
+<footer class="footer">
+    <div class="contenedor footer-contenido">
+        <div class="footer-info">
+            <h3>salon naranja</h3>
+            <p>creando recuerdos desde 2015.</p>
+        </div>
+
+        <div class="footer contacto">
+            <p> av. principal #1234</p>
+            <p> +54 370400-000</p>
+        </div>
+    </div>
+
+    <div class="footer-copy">
+        <p> &copy; 2026 salon naranja. todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<!-- MODAL / VISOR DE IMAGENES -->
+<div id="modal" class="modal">
+    <span id="modal-cerrar" class="modal-cerrar">ytimes;</span>
+    <img id="modal-imagen" class="modal contenido" src="" alt="imagen ampliada">
+    <p id="modal-titulo" class="modal-caption"></p>
+</div>
+
+<!-- Script exclusivo para la logica de la galeria -->
+ <script src="../js/galeria.js"></script>
+
+</body>
+</html>

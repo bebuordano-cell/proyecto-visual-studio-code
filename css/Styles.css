@@ -1,0 +1,552 @@
+/*======================
+RESETO Y ESTILOS GENERALES
+Eliminamos margenes por defecto para controlar el diseño.
+=========================================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #f9f9f9;
+}
+
+/*envoltorio generico para centrar y limitar el ancho del contenido*/
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/*================================
+1. HEADER Y NAVBAR
+==================================*/
+
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba (0,0,0,0.1);
+    position:  sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items:end;
+    padding: 15px 20px;
+}
+
+/* logo */
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.logo a span {
+    color: #ff6f00; /*color naranja distintivo*/
+}
+
+/* navegacion */
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.activo {
+    color: #ff6f00;
+}
+
+/* ================================
+ 2. HERO SECTION
+ ==================================*/
+ .hero {
+    /* color de fondo fallback de tono naranja calido */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), #e65100;
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 20px;
+ }
+
+ .hero-contenido h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+ }
+
+ .hero-contenido p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+ }
+
+ /* boton de llamada a la accion (CTA) */
+ .btn {
+    display: inline-blok;
+    background-color: #ff6f00;
+    color: #ffffff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/*==================================
+3. SECCIONES
+==================================*/
+.seccion {
+    padding: 60px 20px;
+}
+
+.titulo-seccion {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+/*grilla de tarjetas para servicios */
+.servicios-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* permite adaptarde a pantallas pequeñas */
+}
+
+.tarjeta {
+    flex: 1 1 300px; /*ancho flexible minimo de 300px */
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow:  0 3px 10px rgba(0,0,0,0.08);
+    border-top: 4px solid #ff6f00;
+}
+
+.tarjeta h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* seccion destacada */
+.desctacado {
+    background-color: #fff3e0; /* naranja muy suave */
+    text-align: center;
+}
+
+/*================================================
+4. FOOTER
+=================================================*/
+.footer {
+    background-color: #222222;
+    color: #ffffff;
+    padding-top: 40px;
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 30px;
+}
+
+.footer-info h3 {
+    color: #ff6f00;
+    margin-bottom: 5px;
+}
+
+.footer-copy {
+    background-color: #111111;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    color:#88888888;
+}
+
+
+/* ===========================================
+   GALERIA : PASO 1- EL CONTENEDOR PADRE
+   crea la cuadricula se ubica las fotos.
+   ===========================================*/
+   .galeria-grid {
+    display: grid;
+    /* crea columnas automaticas de minimo 260px que se adaptan solas */
+    grid-template-columns: repeat (auto-fit, minmax(260px, 1fr));
+    gap: 20px; /* espacio entre cada foto */
+   }
+
+   /*===========================================
+   GALERIA: PASO 2 - LA TARJETA INDIVIDUAL
+   es la caja que envuelve a cada imagen y su texto
+   ============================================= */
+   .galeria-item {
+    position: relative; /* neceesari para posicionar la capa de texto adentro */
+    border-radius: 8px; /*bordes redondeados */
+    overflow: hidden;   /* corta la imagen si sobresale de las esquinas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 1 / 1; /* mantiene la caja siempre cuadrada */
+    
+   }
+
+   /* ============================================================
+    GALERIA: PASO 3 - LA IMAAGEN
+    controla como se muestra la foto dentro de la tarjeta.
+    ==============================================================*/
+    .galeria-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* evita que la imagen se estire o deforme */
+        display: block;
+        transition: transform 0.4s ease; /* transicion suave para el zoom*/
+    }
+
+    @media (min-width: 768px) {
+        .destacado-grid {
+            grid-column: span 2; /* ocupa 2 columnas de la cuadricula*/
+        }
+    }
+
+    /* ===========================================
+       GALERIA: PASO 5 - LA CAPA DE TEXTO (OVERLAY)
+       se ubica en a parte inferior de la tarjeta oculta al inicio
+       ===========================================*/
+       .galeria-capa {
+        position: absolute; /* se coloca encima de la imagen */
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: linear- gradient (transparent, rgba(0,0,0,0.085)); /*fondo oscuro degradado */
+        color: #ffffff;
+        padding: 20px 15px 15px 15px;
+
+        /* estado inicial: insible */
+        opacity: 0;
+        transition: opacity 0.3s ease; /* transicion suave para aparecer */
+       }
+
+       /* estilos para el titulo dentro de la capa */
+       .galeria-capa h3 {
+           font-size: 1.1rem;
+           margin-bottom: 4px;
+           color: #ffb74d; /* naranja claro*/
+       }
+
+       /* estilos para la descripcion dentro de la capa */
+       .galeria-capa p {
+        font-size: 0.85rem;
+        color: #e0e0e0;
+       }
+
+       /* =========================================
+          GALERIA: PASO 6 - INTERACCON (HOVER)
+          lo que sucede cuando el usuario pasa el cursor por la tarjeta.
+        ===========================================
+
+        /* 1. hace zoom ligerp a la foto */
+        .galeria-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* 2. muestra la capa de texto */
+        .galeria-item:hover .galeria-capa {
+            opacity: 1;
+        }
+
+
+        /* =============================================
+           SECCION CONTACTO
+        ==============================================*/
+
+        .subtitulo-seccion {
+            text-align: center;
+            color: #666;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size:larger;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+
+        /* grilla principal de contacto (2 columnas) */
+        .contacto-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contacto-info,
+        .contacto-formulario {
+            flex: 1 1 320px; /* se adapta en celulares apiladonse apilandose uno debajo de otro*/
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            }
+
+            .contacto-info h2,
+            .contacto-formulario h2 {
+                margin-bottom: 20px;
+                color: #333;
+                border-bottom: 2px solid #ff6f00;
+                padding-bottom: 8px;
+            }
+
+            /* items de informacion */
+            .item-contacto {
+                margin-bottom: 20px;
+            }
+
+            .item-contacto span {
+                display: block;
+                font-weight: bold;
+                color: #ff6f00;
+                margin-bottom: 4px;
+            }
+
+            .item-contacto a {
+                color: #333;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+            .item-contacto a:hover {
+                color: #ff6f00;
+            }
+
+            /* boton especial para whatsApp */
+            .btn-wa {
+                display: inline-block;
+                background-color: #25D366;
+                color: white !important;
+                padding: 10px 15px;
+                border-radius: 5px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+
+            /* formulario */
+            .formulario .campo {
+                margin-bottom: 15px;
+            }
+
+            .formulario label {
+                display: block;
+                font-weight: 600;
+                margin-bottom: 5px;
+                color: #444;
+            }
+
+            .formulario input,
+            .formulario select,
+            .formulario textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-family: inherit;
+                font-size: 0.95rem;
+            }
+
+            .formulario input:focus,
+            .formulario select:focus,
+            .formulario textarea:focus {
+                outline: none;
+                border-color: #ff6f00
+            }
+
+            .btn-enviar {
+                width: 100%;
+                border: none;
+                cursor: pointer;
+                font-size: 1rem;
+            }
+
+            /* estilos para el mapa iframe */
+            .mapa-contenedor iframe {
+                width: 100%;
+                height: 220px;
+                border: 0;
+                border-radius: 8px;
+                margin-top: 5px;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            }
+
+            /* ======================================================
+               SECCION SERVICIOS
+               ====================================================*/
+
+               /* grilla principal de la pagina de servicios */
+               .servicios-pagina-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 30px;
+                margin-bottom: 60px;
+               }
+
+               /* tarjeta individual de servicio */
+               .tarjeta-servicio {
+                flex: 1 1 300px; /*se acomoda de 3 en 3 en pantallas grandes y de 1 en 1 en celulares */
+                background-color: #ffffff;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0. 0.06);
+                border-top: 4px solid #ff6f00;
+                transition: transform 0,3s ease, box-shadow 0.3s ease;
+               }
+
+               /* efecto de elevacion suave al pasar el cursor */
+               .tarjeta-servicio:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+               }
+
+               /* icono del servcio */
+               .icono-servicio {
+                font-size: 2,5rem;
+                margin-bottom: 15px;
+               }
+               
+               .tarjeta-servicio h3 {
+                font-size: 1.3rem;
+                color: #222;
+                margin-bottom: 10px;
+               }
+
+               .tarjeta-servicio p {
+                color: #666;
+                font-size: 0.95rem;
+                margin-bottom: 15px;
+               }
+
+               /*lista de caracteristicas con viñetas personalizadas */
+               .lista-caracteristicas {
+                list-style: none; /* quitamos los puntos feos por defecto*/
+                padding-left: 0;
+                border-top: 1px solid #eee;
+                padding-top: 15px;
+               }
+
+               .lista-caracteristicas li {
+                font-size: 0.9rem;
+                color: #444;
+                margin-bottom: 8px;
+                position: relative;
+                padding-left: 20px
+               }
+
+               /* agregamos una tilde naranja antes de cada item */
+               .lista-caracteristicas li:before {
+                content: "V";
+                position: absolute;
+                left: 0;
+                color: #ff6f00;
+                font-weight: bold;
+               }
+
+               /* agregamos una tilde naranja antes de cada item */
+               .cta-servicios {
+                background: linear-gradient (135deg, #ff6f00, #e65100);
+                color: #ff7728;
+                text-align: center;
+                padding: 40px 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(230, 81, 0, 0.3);
+               }
+
+               .cta-servicios h2 {
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+               }
+
+               .cta-servicios p {
+                font-size: 1.05rem;
+                margin-bottom: 20px;
+                opacity: 0.95;
+               }
+
+               .btn-cta {
+                background-color: #ffffff;
+                color: #e65100;
+                padding: 12px 25px;
+                border-radius: spx;
+                text-decoration: none;
+                font-weight: bold;
+                transition: background-color 0.3s ease, transfor 0.2s ease;
+               }
+
+               .btn-cta:hover {
+                background-color: #fff3e0;
+                transform: scale(1.05);
+               }
+
+               /* ======================================
+                MODAL DE GALERIA
+                ======================================*/
+                .modal {
+                    display: none; /* oculto por defecto */
+                    position: fixed;
+                    z-index: 1000;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0,0,0,0.085); /*fondo oscuro semitransparente */
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+
+                /* clase que activa javascript para  mostrar el modal */
+                .modal.activo {
+                    display: flex;
+                }
+
+                .modal-contenido {
+                    max-width: 85%;
+                    max-height: 75vh;
+                    border-radius: 8px;
+                    box-shadow: 0 5px 25px  rgba(0, 0, 0, 0.5);
+                }
+
+                .modal-caption {
+                    color: #ffffff;
+                    margin-top: 15px;
+                    font-size: 1.1rem;
+                }
+
+                .modal-cerrar {
+                    position: absolute;
+                    top: 20px;
+                    right: 30px;
+                    color: #ffffff;
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: color 0.3s ease;
+                }
+
+                .modal-cerrar:hover {
+                    color: #ff6f00;
+                }
+
+                
